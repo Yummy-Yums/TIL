@@ -1,2 +1,2 @@
 # TIL
-Repo for TIL - TOday I learnt Rust Posts
+Repo for TIL - Today I Learnt Rust Posts
