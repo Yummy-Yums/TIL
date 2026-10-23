@@ -25,7 +25,6 @@ impl RequestBuilder<NoUrl> {
     }
 }
 
-
 fn main() {
     let request_without_url = RequestBuilder::new();
     let request_with_url = RequestBuilder::new().url("https://google.com".to_string());
@@ -37,15 +36,17 @@ mod tests {
     use super::*;
 
     #[test]
-    fn assert_no_url(){
+    fn assert_no_url() {
         let request_without_url = RequestBuilder::new();
         assert_eq!(request_without_url.url, None);
-
     }
 
     #[test]
-    fn assert_url(){
+    fn assert_url() {
         let request_without_url = RequestBuilder::new().url("https://google.com".to_string());
-        assert_eq!(request_without_url.url, Some("https://google.com".to_string()));
+        assert_eq!(
+            request_without_url.url,
+            Some("https://google.com".to_string())
+        );
     }
 }

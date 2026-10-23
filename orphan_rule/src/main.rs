@@ -2,7 +2,8 @@ use std::fmt;
 
 // When you need to implement a foreign trait such as std::fmt::Display on a foreign type: Vec<T>,
 // you cannot do the following
-impl fmt::Display for Vec<String> { // Compile Error E1107
+impl fmt::Display for Vec<String> {
+    // Compile Error E1107
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{:?}", self)
     }
