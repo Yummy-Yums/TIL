@@ -1,0 +1,3 @@
+🦀 Rust TIL: The Orphan Rule and the `Newtype` Pattern In Rust, the orphan rule dictates that an implementation of a trait `SomeTrait` for a type `SomeType` (`impl SomeTrait for SomeType`) is only permitted if either Trait or Type is defined within the local crate. This rule guarantees coherence: two independent crates cannot implement the exact same trait for the exact same type, which would introduce ambiguity for the compiler.
+
+To bypass this restriction, Rust programmers use the Newtype pattern. A newtype is a zero-cost abstraction formed by creating a single-element tuple struct. Because CommaSeparated is defined in the current crate, it is a local type. Therefore, implementing Display for CommaSeparated fully satisfies the orphan rule.
